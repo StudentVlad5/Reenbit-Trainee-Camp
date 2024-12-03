@@ -1,0 +1,139 @@
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+}
+
+.item-input-btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title-name {
+  display: block;
+  font-family: var(--font-family-main);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
+  @include mq(tablet) {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+.item-input {
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  width: 159px;
+  height: 24px;
+  padding: 4px 18px;
+  border-radius: 40px;
+  background-color: var(--color-background-main);
+
+  &:focus {
+    outline-color: var(--color-accent)
+  }
+
+  @include mq(tablet) {
+    font-size: 18px;
+    line-height: 1.8;
+    width: 216px;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.error {
+  color: var(--color-accent);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 500;
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-background-input);
+
+  padding: 1px, 8px;
+  box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+
+  border-radius: 40px;
+
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  z-index: 2;
+
+  @include mq(tablet) {
+    font-size: 12px;
+  }
+}
+
+.item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+  margin-left: 9px;
+  padding: 0;
+
+  background: var(--color-background-input);
+  border-radius: 50%;
+  border-color: transparent;
+
+  cursor: pointer;
+  transform: all var(--linear-anim);
+  transition: all var(--animation);
+
+  &:disabled {
+    svg {
+      fill: #fac9ab;
+    }
+  }
+
+  @include mq(tablet) {
+    width: 32px;
+    height: 32px;
+    margin-left: 24px;
+  }
+}
+
+.icon-pencil {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-accent);
+  transform: all var(--linear-anim);
+
+  @include mq(tablet) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.icon-check {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-accent);
+  transform: all var(--linear-anim);
+  transition: all var(--animation);
+
+  &:hover,
+  :focus {
+    fill: var(--color-accent);
+  }
+
+  @include mq(tablet) {
+    width: 28px;
+    height: 28px;
+  }
+}

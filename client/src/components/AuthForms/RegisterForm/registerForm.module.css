@@ -1,0 +1,252 @@
+.form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    margin: 0 auto;
+
+    @include mq(tablet) {
+        width: 608px;
+        margin: 0 auto;
+        gap: 32px;
+    }
+
+    @include mq(desktop) {
+        width: 618px;
+    }
+
+    &>div {
+        position: relative;
+    }
+}
+
+.form__title {
+    margin-bottom: 20px;
+
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+
+    color: var(--color-text-main);
+
+    @include mq(tablet) {
+        font-size: 36px;
+    }
+}
+
+.form__wrapper {
+    position: relative;
+}
+
+.form__input {
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 11px 0 12px 14px;
+    background: var(--color-background-input);
+    color: var(--color-text-second);
+    border: 1px solid var(--color-border);
+    border-radius: 40px;
+
+    transition: all var(--animation);
+
+    &:focus,
+    &:hover {
+        border-color: var(--color-accent);
+        outline: none;
+    }
+
+    @include mq(tablet) {
+        width: 448px;
+        font-size: 18px;
+    }
+
+    @include mq(desktop) {
+        width: 458px;
+    }
+}
+
+.form__input-error {
+    position: absolute;
+    white-space: nowrap;
+    bottom: 0px;
+    left: 15px;
+    color: #e53e3e;
+    font-family: "Manrope";
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    margin-bottom: -16px;
+
+    @include mq(tablet) {
+        left: 32px;
+    }
+}
+
+.form__icon-check {
+    display: inline-block;
+    position: absolute;
+    right: 6%;
+    top: 62%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateY(-80%);
+    color: grey;
+    cursor: pointer;
+}
+
+.form__icon-show {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 6%;
+    top: 62%;
+    transform: translateY(-80%);
+    color: grey;
+    cursor: pointer;
+
+    svg {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+.form__btn {
+    position: relative;
+
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+
+    text-align: center;
+    color: var(--color-text-white);
+
+    background: var(--color-accent);
+    border: 1px solid var(--color-border);
+    border-radius: 40px;
+
+    transform: scale(1);
+    transition: transform 0.5s;
+
+    cursor: pointer;
+
+    overflow: hidden;
+    transition: all var(--animation);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+        transition: transform 0.5s;
+    }
+
+    &:hover:before {
+        left: 100%;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--color-accent);
+        transition: all var(--slow-anim);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: auto;
+        transform: none;
+        transition: none;
+    }
+
+    &:disabled:before {
+        transform: none;
+        transition: none;
+    }
+
+    @include mq(tablet) {
+        width: 458px;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+}
+
+.form__btn--back {
+    width: 100%;
+    margin: -24px 0 20px 0;
+    padding: 11px 0 12px 14px;
+
+    text-align: center;
+    color: var(--color-text-main);
+
+    background: var(--color-background-white);
+    border: 1px solid var(--color-accent);
+    border-radius: 40px;
+
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.5s;
+    overflow: hidden;
+
+    transition: all var(--animation);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+        transition: transform 0.5s;
+    }
+
+    &:hover:before {
+        left: 100%;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--color-accent);
+        transition: all var(--slow-anim);
+    }
+
+    @include mq(tablet) {
+        width: 458px;
+        margin: -24px 0 40px 0;
+        font-size: 20px;
+    }
+}
+
+.form_text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-family: var(--font-family-main);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+
+    color: var(--color-text-light);
+
+    cursor: pointer;
+
+    &--bold {
+        font-weight: 700;
+    }
+}

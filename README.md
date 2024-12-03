@@ -1,4 +1,4 @@
-# Pics.io
+# Reenbit-Trainee-Camp
 
 ## Task
 
@@ -8,7 +8,7 @@
 
 ## Discription
 
-**Pics.io** is a project for message management, providing users with a convenient tool for working with messages in the form of tasks. The application allows users to download messages, view (use a filter), mark as done and delete in a convenient interface..
+**Reenbit-Trainee-Camp** is a project for message management, providing users with a convenient tool for working with messages in the form of tasks. The application allows users to download messages, view (use a filter), mark as done and delete in a convenient interface..
 
 ## Peculiarities
 
@@ -22,16 +22,16 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/StudentVlad5/Pics.io.git
+   git clone https://github.com/StudentVlad5/Reenbit-Trainee-Camp.git
    ```
 
 2. Go to the project directory:
 
    ```bash
-   cd Pics.io
+   cd Reenbit-Trainee-Camp
    ```
 
-3. Install dependencies for folder Pics.io and client:
+3. Install dependencies for folder Reenbit-Trainee-Camp and client:
 
    ```bash
    npm install

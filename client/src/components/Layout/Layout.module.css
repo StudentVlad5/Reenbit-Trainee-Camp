@@ -1,7 +1,13 @@
 .container {
   display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 16px;
-  max-width: 800px;
   margin: 0 auto;
   padding: 16px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
