@@ -17,14 +17,11 @@ const createMessage = async (req, res, next) => {
         .then((response) => response.json())
         .then((response) => console.log(response))
         .catch((err) => console.error(err));
-      const response = await fetch("https://api.quotable.io/random");
-      console.log("response", response);
+      // const response = await fetch("https://api.quotable.io/random");
+      const response = await fetch("https://zenquotes.io/api/random/unlimited");
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-      // const json = await response.json();
-      // const data = {text:json?.content, from, whom, data: Date.now()};
-      // await Message.create(data);
   }
   try {
     const createMessage = await Message.create({ text, from, whom, data });
