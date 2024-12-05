@@ -81,7 +81,7 @@ const RegisterForm = () => {
           onSubmit={formik.handleSubmit}
           autoComplete="off"
         >
-          <h1 className={css.form__title}>Register</h1>
+          <h1 className={css.form__title}>Sign in</h1>
           {isShown && (
             <div className={css.form__wrapper}>
               <Field
