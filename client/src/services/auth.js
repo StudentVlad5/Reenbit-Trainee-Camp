@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://reenbit-trainee-camp.vercel.app/";
+const BASE_URL = "https://reenbit-trainee-camp.vercel.app";
 
 export const signUp = async (credentials) => {
   try {
