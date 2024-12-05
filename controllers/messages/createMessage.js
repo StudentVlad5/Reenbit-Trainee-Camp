@@ -3,9 +3,10 @@ const { Message } = require("../../models");
 
 const createMessage = async (req, res, next) => {
   const { text, from, whom, data, autoanswer = false } = req.body;
-  console.log("autoanswer", autoanswer);
-  if (autoanswer) {
-      fetch("https://api.quotable.io/random", {
+  try {
+    const createMessage = await Message.create({ text, from, whom, data });
+    if (autoanswer) {
+      const res = await fetch("https://zenquotes.io/api/random/unlimited", {
         method: "GET",
         headers: {
           "Content-Type": "multipart/form-data",
@@ -13,21 +14,18 @@ const createMessage = async (req, res, next) => {
           "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE,OPTIONS",
           "Access-Control-Expose-Headers": "Content-Range",
         },
-      })
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
-      // const response = await fetch("https://api.quotable.io/random");
-      const response = await fetch("https://zenquotes.io/api/random/unlimited");
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
+      });
+      const json = await res.json();
+      if (!Array.isArray(json)) {
+        new Error(`Response status: ${response.status}`);
       }
-  }
-  try {
-    const createMessage = await Message.create({ text, from, whom, data });
+      // const response = await fetch("https://api.quotable.io/random");
+      const newM = await Message.create({ text: json[0].q, from, whom, data });
+    }
     res.status(200).json(createMessage);
   } catch (err) {
     throw new ValidationError("Bad request (invalid request body)");
   }
 };
+
 module.exports = createMessage;

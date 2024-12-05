@@ -34,7 +34,16 @@ export const ChatPanel = () => {
         setListMessages(result.data);
       });
     }
-  }, [id, user_id, status, statusGet]);
+  }, [id, user_id, status]);
+
+  useEffect(() => {
+    if (id) {
+      const timer = setTimeout(()=>getMessage({ whom: id, from: user_id }).then(function (result) {
+        setListMessages(result.data);
+      }),2000)
+      return () => clearTimeout(timer);
+    }
+  }, [statusGet]);
 
   const handleSubmit = () => {
     const data = {
