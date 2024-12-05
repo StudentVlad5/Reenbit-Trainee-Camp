@@ -93,7 +93,7 @@ export const ChatPanel = () => {
   const handleDelete = (e) => {
     e.stopPropagation();
     deleteMessage(e.currentTarget.dataset.info).then(function (result) {
-      setStatus(result.data);
+      setStatus("true");
     });
   };
   const handleEdit = (e) => {
