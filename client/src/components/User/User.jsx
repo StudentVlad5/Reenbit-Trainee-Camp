@@ -26,27 +26,27 @@ export const User = () => {
 
   return (
     <>
-      <section className={css.user + " " + css.section}>
-        <div className={css.user__container + " " + css.container}>
+      <section className={css.user}>
+        <div className={css.user__container}>
           <div
             className={css.edit_container}
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
-            <div className={css["title-group"]}>
-              <h2 className={css["section-title--size-s"]}>My information:</h2>
+            <div>
+              <h2>My information:</h2>
             </div>
             <div className={css.user__wrapper}>
-              <div className={css["img-box"]}>
+              <div className={css.imgBox}>
                 <img
-                  className={css["user-img"]}
+                  className={css.userImg}
                   width="250"
                   height="250"
                   src={userIn.avatar ? userIn.avatar : defaultUserPhoto}
                   alt="User"
                 />
-                <div className={css["change-wrapper"]}>
+                <div className={css.changeWrapper}>
                   <div className={css["edit-camera-warapper"]}>
                     <label htmlFor="user_photo" className={css["lable-user"]}>
                       <TiCamera className={css["edit-icon"]} size={18} />
@@ -54,7 +54,7 @@ export const User = () => {
                     </label>
                   </div>
                   <input
-                    className={css["change-photo-user"]}
+                    className={css.changePhotoUser}
                     type="file"
                     name="file"
                     id="user_photo"

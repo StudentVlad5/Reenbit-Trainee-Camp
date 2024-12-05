@@ -9,7 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body.scroll {
+  scroll-behavior: none;
+  overflow: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -22,4 +25,159 @@ code {
 
   width: 0;
   height: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a.active,
+a.active ul {
+  border-radius: 20px;
+  background: #2f2f37;
+  color: white;
+}
+a.active span {
+  color: white;
+}
+
+.wrapper1 {
+  border: 1px solid gray;
+  padding: 4px 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapper2 {
+  width: 100%;
+  border: none;
+  display: flex;
+  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapper2 input {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+input#gT:focus,
+input#gT:active {
+  border: none;
+  outline: none;
+}
+.talkButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.ChatPanel {
+  width: 100%;
+  text-align: center;
+}
+.chatContent {
+  height: calc(100vh * 0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: scroll;
+  position: relative;
+  scrollbar-width: none;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.rightSide,
+.leftSide {
+  display: block;
+  max-width: 75%;
+  color: black;
+  float: left;
+}
+.leftSide {
+  float: right;
+}
+.rightSide li,
+.leftSide li {
+  text-wrap: pretty;
+  word-wrap: break-word;
+  display: block;
+}
+.rightSide li:first-child {
+  text-align: left;
+  padding: 4px;
+  border-radius: 10px;
+  background: gray;
+  color: white;
+}
+.leftSide li:first-child {
+  text-align: left;
+  padding: 4px;
+  border-radius: 10px;
+  background: rgb(77, 3, 86);
+  color: white;
+}
+.rightSide > li.deleteBucket,
+.leftSide > li.deleteBucket {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+}
+.inputMessagePosition {
+  width: 300px;
+  position: fixed;
+  bottom: 10px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.inputMessagePosition input {
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 80%;
+}
+.editMessage {
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.containerEditMessage {
+  padding: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  display: flex;
+  gap: 10px;
+}
+.green {
+  fill: green;
+  transform: scale(1.1);
 }

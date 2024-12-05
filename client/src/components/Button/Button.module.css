@@ -7,19 +7,23 @@
   cursor: pointer;
   background-color: #e2e5e8;
   color: inherit;
+  font-weight: 600;
 }
 
 .btn.isSelected {
-  background-color: #1976d2;
+  background-color: black;
   color: #fff;
+  font-weight: 600;
 }
 
 .btn:hover {
-  background-color: #1976d2;
+  background-color: black;
   color: #fff;
+  font-weight: 600;
 }
 
 .btn:active {
-  background-color: #1565c0;
+  background-color: black;
   color: #fff;
+  font-weight: 600;
 }

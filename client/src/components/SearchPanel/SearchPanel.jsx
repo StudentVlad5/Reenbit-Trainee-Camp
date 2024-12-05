@@ -1,8 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { useParams } from "react-router-dom";
+import { sendMessage } from "../../services/api";
+import { useSelector } from "react-redux";
+import { selectId } from "../../redux/auth/selectors";
+import { CheckMessageContext } from "../App";
 
 export const SearchPanel = ({ setFilterListUsers, listUsers }) => {
   const [text, setText] = useState("");
+  const [talkButtonStatus, setTalkButtonStatus] = useState(true);
+  const id = useParams();
+  const user_id = useSelector(selectId);
+  const { setStatusGet } = useContext(CheckMessageContext);
+
 
   useEffect(
     (_) => {
@@ -45,6 +56,24 @@ export const SearchPanel = ({ setFilterListUsers, listUsers }) => {
     setText(value);
   };
 
+  const startChat = () => {
+    if (talkButtonStatus) {
+      if (id && id?.id?.length) {
+        const data = {
+          text: "Let's start talking...",
+          from: user_id,
+          whom: id.id,
+          data: Date.now(),
+          autoanswer: true,
+        };
+        sendMessage(data);
+        setStatusGet((prev) => !prev);
+      } else {
+        alert("Please, choose chat");
+      }
+    }
+  };
+
   return (
     <div className="wrapper1">
       <div className="wrapper2">
@@ -56,6 +85,15 @@ export const SearchPanel = ({ setFilterListUsers, listUsers }) => {
           value={text || ""}
         />
       </div>
+      <button className="talkButton" type="button" aria-label="start talk">
+        {" "}
+        <RiKakaoTalkFill
+          onClick={() => setTalkButtonStatus((prev) => !prev)}
+          style={{ width: "25px", height: "25px" }}
+          className={talkButtonStatus ? "green" : "black"}
+        />
+        <span onClick={() => startChat()}>Start</span>
+      </button>
     </div>
   );
 };

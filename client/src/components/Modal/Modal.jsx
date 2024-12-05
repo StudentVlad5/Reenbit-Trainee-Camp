@@ -8,8 +8,12 @@ export default function Modal({
   opacity = 0.6,
 }) {
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     const closeByEsc = document.addEventListener("keydown", (e) => {
-      console.log(e.code);
       if (e.code === "Escape") {
         document.querySelector("body").classList.remove("scroll");
         document.querySelector("#popup-root").classList.add("is-hide");

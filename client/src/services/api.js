@@ -18,6 +18,14 @@ export const sendMessage = async (data) => {
     return error.message;
   }
 };
+export const editMessage = async (data) => {
+  try {
+    const res = await axios.patch(`${BASE_URL}/messages/edit`, data);
+    return res;
+  } catch (error) {
+    return error.message;
+  }
+};
 
 export const deleteMessage = async (data) => {
   try {

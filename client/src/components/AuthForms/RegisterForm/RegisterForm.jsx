@@ -6,8 +6,9 @@ import { ImEye, ImEyeBlocked } from "react-icons/im";
 import schemas from "../../Schemas/schemas";
 import { register } from "../../../redux/auth/operations";
 import css from "./registerForm.module.css";
+import { Link } from "react-router-dom";
 
-const RegisterForm = ({ setStatusLogin }) => {
+const RegisterForm = () => {
   const [isShown, setIsShown] = useState(true);
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
@@ -309,12 +310,14 @@ const RegisterForm = ({ setStatusLogin }) => {
               Back
             </button>
           )}
-          <div className={css.form_text} onClick={setStatusLogin}>
-            <span>
-              Already have an account?{" "}
-              <span className={css["form_text--bold"]}>Login</span>
-            </span>
-          </div>
+          <Link to={"/login"}>
+            <div className={css.form_text}>
+              <span>
+                Already have an account?{" "}
+                <span className={css["form_text--bold"]}>Login</span>
+              </span>
+            </div>
+          </Link>
         </Form>
       </Formik>
       {isLoading && <h1 style={{ textAlign: "center" }}>Loading...</h1>}

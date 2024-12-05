@@ -7,6 +7,7 @@ const schema = new Schema({
   whom: { type: String, required: true },
   data: { type: Number, required: true },
   status: { type: String, default: "new" },
+  autoanswer: {type: Boolean, default: false}
 });
 
 module.exports = model("Message", schema);

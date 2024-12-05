@@ -11,7 +11,7 @@ const getMessages = async (req, res, next) => {
         { whom: whom, from: from },
         { whom: from, from: whom },
       ],
-    }).sort({ createdAt: -1 });
+    }).sort({ data: 1 });
     res.status(200).json(messages);
   } catch (err) {
     throw new ValidationError(err.message);

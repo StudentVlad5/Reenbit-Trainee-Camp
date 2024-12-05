@@ -6,9 +6,9 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import schemas from "../../Schemas/schemas";
 import { logIn } from "../../../redux/auth/operations";
 import css from "./loginForm.module.css";
+import { Link } from "react-router-dom";
 
-
-const LoginForm = ({ setStatusLogin }) => {
+const LoginForm = () => {
   const [isShown, setIsShown] = useState(true); //
   const [showPass, setShowPass] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -140,12 +140,14 @@ const LoginForm = ({ setStatusLogin }) => {
               {"Login"}
             </button>
           )}
-          <div className={css.form_text} onClick={() => setStatusLogin(false)}>
-            <span>
-              {"Still don't have an account? "}
-              <span className={css["form_text--bold"]}>Register</span>
-            </span>
-          </div>
+          <Link to={"/signin"}>
+            <div className={css.form_text}>
+              <span>
+                {"Still don't have an account? "}
+                <span className={css["form_text--bold"]}>Register</span>
+              </span>
+            </div>
+          </Link>
         </Form>
       </Formik>
       {isLoading && <h1 style={{ textAlign: "center" }}>{"Loading..."}</h1>}

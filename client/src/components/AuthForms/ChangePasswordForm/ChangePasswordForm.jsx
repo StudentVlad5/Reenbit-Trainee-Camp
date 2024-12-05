@@ -33,7 +33,6 @@ const ChangePasswordForm = () => {
   const onSubmit = (values) => {
     setIsLoading(true);
     const { password } = values;
-    console.log("password", password);
     changePasswordUser(userinID, password);
     setIsLoading(false);
   };
