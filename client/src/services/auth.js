@@ -38,15 +38,7 @@ export const updateUserData = async (updateData) => {
   updateData?.role && formData.append("role", updateData.role);
   const { data } = await axios.patch(
     `${BASE_URL}/auth/user/${updateData._id}`,
-    formData,
-    {
-      headers: {
-        // "Content-Type": "multipart/form-data",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE,OPTIONS",
-        "Access-Control-Expose-Headers": "Content-Range",
-      },
-    }
+    formData
   );
   return data;
 };
