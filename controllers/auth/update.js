@@ -9,7 +9,6 @@ const bcrypt = require("bcryptjs");
 
 const update = async (req, res, next) => {
   const { id } = req.params;
-  console.log("req.body", req.body);
   const newData = dataFilter(req.body, userFieldReceivedFromFront);
   if (req.body?.password) {
     const hashPassword = bcrypt.hashSync(

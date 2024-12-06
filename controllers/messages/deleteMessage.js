@@ -3,7 +3,6 @@ const { Message } = require("../../models");
 
 const deleteMessage = async (req, res, next) => {
   const { id } = req.params;
-  console.log("id", id);
   try {
     const message = await Message.deleteOne({ _id: id });
     if (message.deletedCount === 0) {
