@@ -23,7 +23,7 @@ router.post(
 router.post("/logout", ctrlWrapper(authMiddleware), ctrlWrapper(ctrl.logout));
 router.post("/", ctrlWrapper(authMiddleware), ctrlWrapper(ctrl.current));
 
-router.patch(
+router.post(
   "/:id",
   ctrlWrapper(authMiddleware),
   uploadCloud.single("avatar"),

@@ -48,7 +48,7 @@ export const updateUserData = async (updateData) => {
   updateData?.birthday && formData.append("birthday", updateData.birthday);
   updateData?.location && formData.append("location", updateData.location);
   updateData?.role && formData.append("role", updateData.role);
-  const { data } = await axios.patch(
+  const { data } = await axios.post(
     `${BASE_URL}/auth/${updateData._id}`,
     formData,
     {
