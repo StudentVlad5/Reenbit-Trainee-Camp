@@ -140,6 +140,7 @@ export const ChatPanel = () => {
             );
           })}
         <AlwaysScrollToBottom />
+      </div>
         <div className="wrapper2 inputMessagePosition">
           <input
             placeholder="Type your message"
@@ -150,7 +151,6 @@ export const ChatPanel = () => {
           />
           <FaRegArrowAltCircleRight onClick={handleSubmit} />
         </div>
-      </div>
       {statusEdit && (
         <Modal closeFunction={setStatusEdit}>
           {listMessages.map((it) => {

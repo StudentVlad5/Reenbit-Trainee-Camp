@@ -5,8 +5,14 @@
 
 .section {
   display: block;
+  height: 100vh;
 }
-
+.contactListContainer {
+  height: calc(100vh * 0.6);
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 .title {
   margin: 0;
   font-size: 16px;

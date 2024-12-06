@@ -47,9 +47,8 @@ export const App = () => {
                   component={
                     <>
                       <h1>Welcome to Reenbit-Trainee-Camp Massanger</h1>
-                      <p>
-                        To be able to continue working, you must register or log
-                        in
+                      <p style={{padding:"30px"}}>
+                        To be able to continue working, <b><i>you need to signup or login</i></b>
                       </p>
                     </>
                   }

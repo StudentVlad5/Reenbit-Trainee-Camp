@@ -123,38 +123,40 @@ export const AppBar = () => {
             listUsers={listUsers}
           />
         )}
-        {isLoggedIn &&
-          filterListUsers &&
-          filterListUsers.length > 0 &&
-          filterListUsers.map((it) => {
-            return (
-              <NavLink to={`chats/${it._id}`} key={it._id}>
-                <ul className={css.contactList}>
-                  <li className={css.imgContact}>
-                    <img
-                      src={it?.avatar ? it?.avatar : noPhoto}
-                      alt={it.userName}
-                    />
-                    {+it.count > 0 && (
-                      <span className={css.countNewLetters}>{it.count}</span>
-                    )}
-                    <span className={css.countCheckOnline}>
-                      {it.isActivate ? (
-                        <FaCircleCheck style={{ fill: "gray" }} />
-                      ) : (
-                        <FaCircleCheck style={{ fill: "green" }} />
+        <div className={css.contactListContainer}>
+          {isLoggedIn &&
+            filterListUsers &&
+            filterListUsers.length > 0 &&
+            filterListUsers.map((it) => {
+              return (
+                <NavLink to={`chats/${it._id}`} key={it._id}>
+                  <ul className={css.contactList}>
+                    <li className={css.imgContact}>
+                      <img
+                        src={it?.avatar ? it?.avatar : noPhoto}
+                        alt={it.userName}
+                      />
+                      {+it.count > 0 && (
+                        <span className={css.countNewLetters}>{it.count}</span>
                       )}
-                    </span>
-                  </li>
-                  <li className={css.dataContact}>
-                    <span className={css.title}>{it.userName}</span>
-                    <span>{it.phone}</span>
-                    <span>{it.email}</span>
-                  </li>
-                </ul>
-              </NavLink>
-            );
-          })}
+                      <span className={css.countCheckOnline}>
+                        {it.isActivate ? (
+                          <FaCircleCheck style={{ fill: "gray" }} />
+                        ) : (
+                          <FaCircleCheck style={{ fill: "green" }} />
+                        )}
+                      </span>
+                    </li>
+                    <li className={css.dataContact}>
+                      <span className={css.title}>{it.userName}</span>
+                      <span>{it.phone}</span>
+                      <span>{it.email}</span>
+                    </li>
+                  </ul>
+                </NavLink>
+              );
+            })}
+        </div>
       </section>
       {statusModal && (
         <Modal closeFunction={setStatusModal}>
