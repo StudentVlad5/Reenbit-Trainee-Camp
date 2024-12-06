@@ -24,7 +24,7 @@ router.post("/logout", ctrlWrapper(authMiddleware), ctrlWrapper(ctrl.logout));
 router.post("/", ctrlWrapper(authMiddleware), ctrlWrapper(ctrl.current));
 
 router.patch(
-  "/user/:id",
+  "/:id",
   ctrlWrapper(authMiddleware),
   uploadCloud.single("avatar"),
   validation(userUpdateValidationSchema),
