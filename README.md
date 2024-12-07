@@ -21,8 +21,6 @@ This is a chat application built with the MERN stack (MongoDB, Express.js, React
   - Express.js
   - MongoDB (Atlas)
   - Node.js
-- **Real-time Communication**:
-  - Socket.IO (for real-time messaging and notifications)
 
 ## Getting Started
 
@@ -107,7 +105,7 @@ Before you begin, make sure you have the following installed:
   - React.js for building the frontend UI.
   - Node.js for the server-side runtime environment.
   
-- **Socket.IO**: Used for real-time messaging and updates when a new message is received or when a user changes their status.
+- **Socket**: Used for real-time messaging and updates when a new message is received or when a user changes their status.
 
 - **JWT Authentication**: JSON Web Tokens (JWT) are used to authenticate users and maintain their session.
 
@@ -120,7 +118,7 @@ Before you begin, make sure you have the following installed:
 - **PUT /api/users/:id**: Update a user’s profile information.
 - **DELETE /api/users/:id**: Delete a user’s account.
 
-### Real-time Chat Endpoints (via Socket.IO)
+### Real-time Chat Endpoints 
 
 - **Connect to socket server**: Establish a WebSocket connection.
 - **sendMessage**: Send a new message to a chat.
