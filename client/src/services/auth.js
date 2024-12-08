@@ -68,7 +68,7 @@ export const refreshUserToken = async () => {
 export async function changePassword(pathParams, body) {
   const formData = new FormData();
   formData.append("password", body);
-  return axios.patch(`${BASE_URL}/auth/user/${pathParams}`, formData, {
+  return axios.post(`${BASE_URL}/auth/${pathParams}`, formData, {
     headers: header,
   });
 }

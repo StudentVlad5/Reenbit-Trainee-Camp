@@ -22,7 +22,7 @@ export const sendMessage = async (data) => {
 };
 export const editMessage = async (data) => {
   try {
-    const res = await axios.patch(`${BASE_URL}/messages/edit`, data);
+    const res = await axios.post(`${BASE_URL}/messages/edit`, data);
     return res;
   } catch (error) {
     return error.message;
